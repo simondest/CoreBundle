@@ -1,0 +1,27 @@
+{
+    "name" : "simondest/core-bundle",
+    "description" : "",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "simon",
+        "email" : "simon@vercors-net.com"
+    }],
+    "keywords" : [
+        ""
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+    	    "php" : ">=5.5.9",
+		    "symfony/symfony" : "^3.1"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Vertacoo\\CoreBundle" : ""
+        }
+    },
+    "target-dir" : "Vertacoo/CoreBundle",
+    "repositories" : [{
+    }]
+}
