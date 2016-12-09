@@ -1,0 +1,3 @@
+services:
+  vertacoo_core.form_errors_serializer:
+    class: Vertacoo\CoreBundle\Service\FormErrorsSerializer
