@@ -19,10 +19,26 @@ class VertacooCoreExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('services.yml');
+        
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.yml');
+        if ($this->isConfigEnabled($container, $config['form'])) {
+            $this->registerFormConfiguration($config, $container, $loader);
+        }
+        
+
+        
+    }
+    
+    private function registerFormConfiguration($config, $container, $loader){
+        if ($config['form']['errors_serializer'] == true) {
+            $loader->load('form_errors_serializer.yml');
+        }
+        if ($config['form']['help_extension'] == true) {
+            $loader->load('form_help_extension.yml');
+        }
     }
 }

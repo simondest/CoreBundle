@@ -1,0 +1,6 @@
+services: 
+  vertacoo_core.form.extension.help:
+    class: Vertacoo\CoreBundle\Form\Extension\HelpExtension
+    arguments: []
+    tags:
+        - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\FormType }

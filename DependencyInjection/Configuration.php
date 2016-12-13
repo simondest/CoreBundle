@@ -20,9 +20,14 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('vertacoo_core');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode->children()
+                    ->arrayNode('form')->canBeEnabled()
+                            ->children()
+                                ->booleanNode('help_extension')->defaultFalse()->end()
+                                ->booleanNode('errors_serializer')->defaultFalse()->end()
+                            ->end()
+                    ->end()
+        ->end();
 
         return $treeBuilder;
     }
