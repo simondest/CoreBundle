@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+/*
+ Define a wrapper for the navbar.
+ */
+.nav-wrapper {
+	height: 60px;
+}
